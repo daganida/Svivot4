@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
+using System.Threading.Tasks;
 
 namespace WebRole2
 {
@@ -11,10 +12,13 @@ namespace WebRole2
     {
         public override bool OnStart()
         {
-            // For information on handling configuration changes
-            // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
-
+            Task.Factory.StartNew(StartQuartzJob);
             return base.OnStart();
+        }
+
+        private void StartQuartzJob()
+        {
+            // Do work here.            
         }
     }
 }

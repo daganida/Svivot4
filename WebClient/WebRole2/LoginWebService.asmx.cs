@@ -23,11 +23,7 @@ namespace WebRole2
     public class LoginWebService : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
+
 
         [WebMethod]
         public string Login(string username, string password)
@@ -55,7 +51,7 @@ namespace WebRole2
                         return "User Exist!";
                     }
                 }
-                return "User does not exist!";
+                return "User Name Or Password does not match!";
                
 
             }catch(Exception err) {
@@ -68,8 +64,10 @@ namespace WebRole2
 
         public string GetMovies(string substring)
         {
+            try
+            {
 
-            string ans = "";
+                string ans = "";
 
                 string conn = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
                 //The query to use
@@ -89,10 +87,15 @@ namespace WebRole2
                 {
                     if (dw[1].ToString().ToLower().Contains(substring))
                     {
-                        ans+= "{"+dw[0]+"^"+dw[1]+"^"+dw[2]+"^"+dw[3]+"^"+dw[4]+"^"+dw[5]+"^"+dw[6]+"^+"+dw[7]+"^"+dw[8]+"}";
+                        ans += "{" + dw[0] + "^" + dw[1] + "^" + dw[2] + "^" + dw[3] + "^" + dw[4] + "^" + dw[5] + "^" + dw[6] + "^+" + dw[7] + "^" + dw[8] + "}";
                     }
                 }
                 return ans;
+            }
+            catch (Exception err)
+            {
+                return err.Message.ToString();
+            }
 
         }
     
