@@ -13,6 +13,8 @@
         <h2>Weather Search</h2>
         <input type=text id="text" />
         <button id="button" type="button" onclick="loadXMLDoc()">Search</button> <br />
+        <ListBox id="lstbx1"></ListBox>
+        <listbox id="lxtbx2"></listbox>
         <span id="span" style="visibility:hidden">Searching....</span>
         <table class="jsTable" id="table"></table>
         <div id="id01">
@@ -28,6 +30,8 @@
         var xmlhttp;
 
         var mySearch = document.getElementById("text");
+        var yearCritertion = document.getElementById("yearBox").selectedValue;
+        var genreCriterion = document.getElementById("genreBox").selectedValue;
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -49,8 +53,7 @@
                         
                     }
                 }
-        // xmlhttp.open("GET", "http://api.tvmaze.com/search/people?q=" + mySearch.value, true);
-        xmlhttp.open("GET", "http://www.omdbapi.com/?t=" + mySearch.value + "&y=&plot=&r=json");
+        xmlhttp.open("GET", "http://www.omdbapi.com/?t=" + mySearch.value + "&y="+yearCritertion+"&plot="+genreCriterion+"&r=json");
         xmlhttp.send();
     }
     function getJson(json) {

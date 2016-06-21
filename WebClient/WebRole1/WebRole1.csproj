@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Api.html" />
+    <Content Include="ApiAssignment.aspx" />
     <Content Include="packages.config" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap-theme.min.css.map" />
@@ -107,10 +108,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
+    <Content Include="bootstrap.css" />
+    <Content Include="bootstrap.min.css" />
     <Content Include="css\Scripts\angular.js" />
     <Content Include="css\Scripts\App.js" />
     <Content Include="Login.aspx" />
@@ -136,6 +137,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiAssignment.aspx.cs">
+      <DependentUpon>ApiAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApiAssignment.aspx.designer.cs">
+      <DependentUpon>ApiAssignment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
