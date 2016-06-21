@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+       
+
+    <title>
+    </title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <html>
+    <body>
+        <h2>Weather Search</h2>
+        <input type=text id="text" />
+        <button id="button" type="button" onclick="loadXMLDoc()">Search</button> <br />
+        <span id="span" style="visibility:hidden">Searching....</span>
+        <table class="jsTable" id="table"></table>
+        <div id="id01">
+            <p style="text-anchor" id="p"></p>
+        </div>
+    </body>
+</html>
+</body>
+</html>
+<script>
+    var myList;
+    function loadXMLDoc() {
+        var xmlhttp;
+
+        var mySearch = document.getElementById("text");
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange =
+                function () {
+                           
+
+                    //alert(xmlhttp.readyState);
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        getJson(xmlhttp.responseText);
+
+
+                                        
+                        
+                    }
+                }
+        // xmlhttp.open("GET", "http://api.tvmaze.com/search/people?q=" + mySearch.value, true);
+        xmlhttp.open("GET", "http://www.omdbapi.com/?t=" + mySearch.value + "&y=&plot=&r=json");
+        xmlhttp.send();
+    }
+    function getJson(json) {
+        document.getElementById("p").innerText = "";
+
+        json = $.parseJSON(json);
+         
+        $("#p").append("Movie Title : " + json.Title);
+        $("#p").append("</br>");
+        $("#p").append("Year : " + json.Year);
+        $("#p").append("</br>");
+        $("#p").append("SCORE : " + json.Rated);
+        $("#p").append("</br>");
+        $("#p").append("Date Released : " + json.Released);
+        $("#p").append("</br>");
+        $("#p").append("RunTime : " + json.Runtime);
+        $("#p").append("</br>");
+        $("#p").append("Genre : " + json.Genre);
+        $("#p").append("</br>");
+        $("#p").append("Director" + json.Director);
+        $("#p").append("</br>");
+        $("#p").append("Actor : " + json.Actors);
+        $("#p").append("</br>");
+        $("#p").append("Plot : " + json.Plot);
+        $("#p").append("</br>");
+        $("#p").append("Language : " + json.Language);
+        $("#p").append("</br>");
+        $("#p").append("Country : " + json.Country);
+        $("#p").append("</br>");
+
+        $("#p").append("Awards : " + json.Awards);
+        $("#p").append("</br>");
+
+        $("#p").append("Poster : " + json.Poster);
+ ;
+        
+
+    }
+     
+       
+       
+
+
+</script>

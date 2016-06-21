@@ -25,7 +25,7 @@
     </Endpoints>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="\\Mac\Home\Documents\Visual Studio 2013\Projects\WebClient\WebService\rcf\Debug\WebRole2Content\" />
+        <SourceDirectory path="Z:\Svivot4\WebClient\WebService\rcf\Debug\WebRole2Content\" />
       </Content>
     </Contents>
   </WebRole>

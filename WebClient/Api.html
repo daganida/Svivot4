@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+       
+
+    <title>
+    </title>
+    <script src=""
+</head>
+<body>
+    <html>
+    <body>
+        <h2>Weather Search</h2>
+        <input type=text id="text" />
+        <button id="button" type="button" onclick="loadXMLDoc()">Search</button> <br />
+        <span id="span" style="visibility:hidden">Searching....</span>
+        <table id="excelDataTable" border="1"></table>
+    </body>
+</html>
+</body>
+</html>
+<script>
+    var myList;
+    function loadXMLDoc() {
+        var xmlhttp;
+        document.getElementById("span").style.visibility = "visible";
+        document.getElementById("button").style.visibility = "hidden";
+        var mySearch = document.getElementById("text");
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange =
+                function () {
+                           
+
+                    //alert(xmlhttp.readyState);
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        myList = xmlhttp.responseText;
+                        buildHtmlTable('#excelDataTable');
+
+                                        
+                        
+                    }
+                }
+        // xmlhttp.open("GET", "http://api.tvmaze.com/search/people?q=" + mySearch.value, true);
+        xmlhttp.open("GET", "http://www.omdbapi.com/?t=" + mySearch.value + "&y=&plot=&r=json");
+        xmlhttp.send();
+    }
+
+        function buildHtmlTable(selector) {
+            var columns = addAllColumnHeaders(myList, selector);
+
+            for (var i = 0 ; i < myList.length ; i++) {
+                var row$ = $('<tr/>');
+                for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
+                    var cellValue = myList[i][columns[colIndex]];
+
+                    if (cellValue == null) { cellValue = ""; }
+
+                    row$.append($('<td/>').html(cellValue));
+                }
+                $(selector).append(row$);
+            }
+        }
+
+        function addAllColumnHeaders(myList, selector)
+        {
+            var columnSet = [];
+            var headerTr$ = $('<tr/>');
+
+            for (var i = 0 ; i < myList.length ; i++) {
+                var rowHash = myList[i];
+                for (var key in rowHash) {
+                    if ($.inArray(key, columnSet) == -1){
+                        columnSet.push(key);
+                        headerTr$.append($('<th/>').html(key));
+                    }
+                }
+            }
+            $(selector).append(headerTr$);
+
+            return columnSet;
+        }
+
+
+</script>

@@ -14,6 +14,11 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WebService", "WebService\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole2", "WebRole2\WebRole2.csproj", "{3F746D2B-EE8B-4400-8FD3-757E2FA239AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part2", "Part2", "{145DF3E5-BEFF-453A-8F5A-C38A5D0B555A}"
+	ProjectSection(SolutionItems) = preProject
+		Api.html = Api.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
