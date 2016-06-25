@@ -30,7 +30,7 @@
 
         <br />
 
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="DropDownList1"  runat="server" ></asp:DropDownList>
 
         <p id="p"></p>
 
@@ -121,7 +121,7 @@
         document.getElementById("p").innerText = "";
 
         json = $.parseJSON(json);
-        if (ShouldPrintDetails) {
+        if (json.Title != null) {
 
             $("#p").append("<span style="+"font-weight:bold;"+">Movie Title : </span>" + json.Title);
             $("#p").append("</br>");
@@ -163,6 +163,67 @@
 
 
     }
+    $("#DropDownList1").change(function () {
+        $("#p").empty();
+        var end = this.value;
+        switch (end) {
+            case "All":
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Movie Title : </span>" + json.Title);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">RunTime : </span>" + json.Runtime);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Director : </span>" + json.Director);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Actor : </span>" + json.Actors);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Plot : </span>" + json.Plot);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Language : </span>" + json.Language);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Country : </span>" + json.Country);
+                $("#p").append("</br>");
+
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Awards : </span>" + json.Awards);
+                $("#p").append("</br>");
+
+                $("#p").append("<span style=" + "font-weight:bold;" + ">MetaScore : </span>" + json.MetaScore);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Ratings : </span>" + json.imdbRating);
+                $("#p").append("</br>");
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Votes : </span>" + json.imdbVotes);
+
+                break;
+
+            case "Title":
+                $("#p").append("<span style=" + "font-weight:bold;" + ">Movie Title : </span>" + json.Title);
+                break;
+            case "Year": $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
+                break;
+
+
+            case "Rated": $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
+                break;
+
+            case "Released": $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
+                break;
+
+
+
+            case "Genre": $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
+                break;
+       
+        default:
+        }
+
+    });
 
 
 

@@ -50,21 +50,12 @@ namespace WebRole1
 
                 List<string> MovieDetails = new List<string>()
                 {
-                { "Movie Title"},       
+                    { "All"},
+                { "Title"},       
                 { "Year"},
-                { "Score" },
-                {"Date Released" },
-                { "RunTime" },
+                { "Rated"},
+                {"Released" },
                 {  "Genre" },
-                { "Director" },
-                {  "Actor" },
-                {  "Plot" },
-                { "Language" },
-                {  "Country"},
-                {  "Awards" },
-                { "MetaScore"},
-                {  "Imdb Ratings"},
-                { "Imdb Votes" },
                 };
                 lstbx1.DataSource = Plot;
                 lstbx1.DataBind();
