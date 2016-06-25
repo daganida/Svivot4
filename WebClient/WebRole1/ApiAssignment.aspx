@@ -122,38 +122,7 @@
 
         json = $.parseJSON(json);
         if (json.Title != null) {
-
-            $("#p").append("<span style="+"font-weight:bold;"+">Movie Title : </span>" + json.Title);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">RunTime : </span>" + json.Runtime);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Director : </span>" + json.Director);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Actor : </span>" + json.Actors);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Plot : </span>" + json.Plot);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Language : </span>" + json.Language);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Country : </span>" + json.Country);
-            $("#p").append("</br>");
-
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Awards : </span>" + json.Awards);
-            $("#p").append("</br>");
-
-            $("#p").append("<span style=" + "font-weight:bold;" + ">MetaScore : </span>" + json.MetaScore);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Ratings : </span>" + json.imdbRating);
-            $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Votes : </span>" + json.imdbVotes);
+            WriteAll();
         }
         else {
             $("#p").append("<span class="+"text-danger"+">"+"No Matches found for that movie,Maybe your'e missing a character?"+"</span>");
@@ -166,64 +135,72 @@
     $("#DropDownList1").change(function () {
         $("#p").empty();
         var end = this.value;
+        $("#p").append("<span style=" + "font-weight:bold;" + ">"+end+" : </span>");
+
         switch (end) {
             case "All":
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Movie Title : </span>" + json.Title);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">RunTime : </span>" + json.Runtime);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Director : </span>" + json.Director);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Actor : </span>" + json.Actors);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Plot : </span>" + json.Plot);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Language : </span>" + json.Language);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Country : </span>" + json.Country);
-                $("#p").append("</br>");
-
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Awards : </span>" + json.Awards);
-                $("#p").append("</br>");
-
-                $("#p").append("<span style=" + "font-weight:bold;" + ">MetaScore : </span>" + json.MetaScore);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Ratings : </span>" + json.imdbRating);
-                $("#p").append("</br>");
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Votes : </span>" + json.imdbVotes);
+                WriteAll();
 
                 break;
 
             case "Title":
-                $("#p").append("<span style=" + "font-weight:bold;" + ">Movie Title : </span>" + json.Title);
+                $("#p").append(json.Title);
                 break;
-            case "Year": $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
-                break;
-
-
-            case "Rated": $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
-                break;
-
-            case "Released": $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
+            case "Year": $("#p").append( json.Year);
                 break;
 
 
+            case "Rated": $("#p").append(json.Rated);
+                break;
 
-            case "Genre": $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
+            case "Released": $("#p").append(json.Released);
+                break;
+
+
+
+            case "Genre": $("#p").append(json.Genre);
                 break;
        
         default:
         }
 
     });
+
+    function WriteAll()
+    {
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Movie Title : </span>" + json.Title);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">RunTime : </span>" + json.Runtime);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Genre : </span>" + json.Genre);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Director : </span>" + json.Director);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Actor : </span>" + json.Actors);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Plot : </span>" + json.Plot);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Language : </span>" + json.Language);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Country : </span>" + json.Country);
+        $("#p").append("</br>");
+
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Awards : </span>" + json.Awards);
+        $("#p").append("</br>");
+
+        $("#p").append("<span style=" + "font-weight:bold;" + ">MetaScore : </span>" + json.MetaScore);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Ratings : </span>" + json.imdbRating);
+        $("#p").append("</br>");
+        $("#p").append("<span style=" + "font-weight:bold;" + ">Imdb Votes : </span>" + json.imdbVotes);
+        
+    }
 
 
 
