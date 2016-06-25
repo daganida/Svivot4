@@ -46,10 +46,32 @@ namespace WebRole1
 
 
             };
+
+
+                List<string> MovieDetails = new List<string>()
+                {
+                { "Movie Title"},       
+                { "Year"},
+                { "Score" },
+                {"Date Released" },
+                { "RunTime" },
+                {  "Genre" },
+                { "Director" },
+                {  "Actor" },
+                {  "Plot" },
+                { "Language" },
+                {  "Country"},
+                {  "Awards" },
+                { "MetaScore"},
+                {  "Imdb Ratings"},
+                { "Imdb Votes" },
+                };
                 lstbx1.DataSource = Plot;
                 lstbx1.DataBind();
                 lstbx2.DataSource = YearList;
                 lstbx2.DataBind();
+                DropDownList1.DataSource = MovieDetails;
+                DropDownList1.DataBind();
 
             }
            

@@ -24,11 +24,14 @@
        &nbsp; <asp:ListBox ID="lstbx1" runat="server"></asp:ListBox>
         <asp:ListBox ID="lstbx2" runat="server"></asp:ListBox>
         <br />
+
         <span class="text-danger" ">Mark the Radio Button options, and we will not  return the movie, if the year or plot does not match..&nbsp;&nbsp; <asp:CheckBox ID="r1" runat="server" /><br /><br /></span>
 
 
         <br />
-        <span  style="font-weight:bold">Thank you and have fun!</span>
+
+        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+
         <p id="p"></p>
 
            
@@ -124,7 +127,7 @@
             $("#p").append("</br>");
             $("#p").append("<span style=" + "font-weight:bold;" + ">Year : </span>" + json.Year);
             $("#p").append("</br>");
-            $("#p").append("<span style=" + "font-weight:bold;" + ">SCORE : </span>" + json.Rated);
+            $("#p").append("<span style=" + "font-weight:bold;" + ">Score : </span>" + json.Rated);
             $("#p").append("</br>");
             $("#p").append("<span style=" + "font-weight:bold;" + ">Date Released : </span>" + json.Released);
             $("#p").append("</br>");
