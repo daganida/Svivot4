@@ -9,7 +9,6 @@ using System.Web.Services;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-
 namespace WebRole2
 {
     /// <summary>
@@ -64,6 +63,7 @@ namespace WebRole2
 
         public string GetMovies(string substring)
         {
+                    
             try
             {
 

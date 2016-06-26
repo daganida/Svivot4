@@ -113,4 +113,3 @@ Z:\Svivot4\WebClient\WebRole1\bin\zh-Hans\System.Spatial.resources.dll
 Z:\Svivot4\WebClient\WebRole1\bin\zh-Hant\System.Spatial.resources.dll
 Z:\Svivot4\WebClient\WebRole1\obj\Debug\WebRole1.dll
 Z:\Svivot4\WebClient\WebRole1\obj\Debug\WebRole1.pdb
-Z:\Svivot4\WebClient\WebRole1\obj\Debug\WebRole1.csprojResolveAssemblyReference.cache

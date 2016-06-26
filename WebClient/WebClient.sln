@@ -5,11 +5,6 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WebClient", "WebClient\WebClient.ccproj", "{A4BC685D-6342-4108-A3FE-F647D0AAB7A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole1", "WebRole1\WebRole1.csproj", "{645B64DD-178B-4DCD-B92D-C58B6F6F40BC}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3F746D2B-EE8B-4400-8FD3-757E2FA239AF} = {3F746D2B-EE8B-4400-8FD3-757E2FA239AF}
-	EndProjectSection
-EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WebService", "WebService\WebService.ccproj", "{6469E62A-B89D-4DB2-B727-A338C1EB116A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole2", "WebRole2\WebRole2.csproj", "{3F746D2B-EE8B-4400-8FD3-757E2FA239AF}"
@@ -17,6 +12,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Part2", "Part2", "{145DF3E5-BEFF-453A-8F5A-C38A5D0B555A}"
 	ProjectSection(SolutionItems) = preProject
 		Api.html = Api.html
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore", "\\Mac\Home\Desktop\לימודים\שנה ג\סביבות פיתוח באינטרנט\עבודות\עבודה 3\WebAssignment3\MovieStore\MovieStore.csproj", "{EA0806A9-17BB-4D7A-8F73-5F568696FD24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3F746D2B-EE8B-4400-8FD3-757E2FA239AF} = {3F746D2B-EE8B-4400-8FD3-757E2FA239AF}
 	EndProjectSection
 EndProject
 Global
@@ -29,10 +29,6 @@ Global
 		{A4BC685D-6342-4108-A3FE-F647D0AAB7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4BC685D-6342-4108-A3FE-F647D0AAB7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4BC685D-6342-4108-A3FE-F647D0AAB7A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{645B64DD-178B-4DCD-B92D-C58B6F6F40BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{645B64DD-178B-4DCD-B92D-C58B6F6F40BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{645B64DD-178B-4DCD-B92D-C58B6F6F40BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{645B64DD-178B-4DCD-B92D-C58B6F6F40BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6469E62A-B89D-4DB2-B727-A338C1EB116A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6469E62A-B89D-4DB2-B727-A338C1EB116A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6469E62A-B89D-4DB2-B727-A338C1EB116A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{3F746D2B-EE8B-4400-8FD3-757E2FA239AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F746D2B-EE8B-4400-8FD3-757E2FA239AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F746D2B-EE8B-4400-8FD3-757E2FA239AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0806A9-17BB-4D7A-8F73-5F568696FD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0806A9-17BB-4D7A-8F73-5F568696FD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0806A9-17BB-4D7A-8F73-5F568696FD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0806A9-17BB-4D7A-8F73-5F568696FD24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
